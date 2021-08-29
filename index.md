@@ -1,37 +1,92 @@
-## Welcome to GitHub Pages
+<img align="right" alt="traffic" src="https://pv-badge.herokuapp.com/total.svg?repo_id=olavoparno-should-i-deploy-today"/>
 
-You can use the [editor on GitHub](https://github.com/olavoparno/should-i-deploy-today/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Should I deploy today CI/CD
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> Should I deploy today? Use it in your CI/CD environment or simply for fun.
 
-### Markdown
+| Statements                                                                    | Branches                                                                  | Functions                                                                   | Lines                                                               |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg) |
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
 
-```markdown
-Syntax highlighted code block
+## Table of Contents
 
-# Header 1
-## Header 2
-### Header 3
+- [Practical example](#practical-example)
+- [Installation](#installation)
+- [Simple Usage](#simple-usage)
+- [Advanced Usage](#advanced-usage)
+- [License](#license)
 
-- Bulleted
-- List
+## Practical example
 
-1. Numbered
-2. List
+![Example](https://github.com/olavoparno/should-i-deploy-today/raw/develop/assets/practical-example.png)
 
-**Bold** and _Italic_ and `Code` text
+---
 
-[Link](url) and ![Image](src)
+## Installation
+
+- Install the library in your project as a devDependency:
+
+```bash
+  npm i -D should-i-deploy-today
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+---
 
-### Jekyll Themes
+## Simple Usage
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/olavoparno/should-i-deploy-today/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Simply run it from the CLI as follows to see whether you should or should not deploy today:
 
-### Support or Contact
+```bash
+  npm run should-i-deploy-today
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+---
+
+## Advanced Usage
+
+- Want it to throw an error on your CI/CD environment? Use **--ci** argument:
+
+```bash
+  npm run should-i-deploy-today --ci
+```
+
+- You may also use **CI=true** instead:
+
+```bash
+  CI=true npm run should-i-deploy-today --ci
+```
+
+> Output example from a [pipeline](https://github.com/olavoparno/should-i-deploy-today/runs/3455432573?check_suite_focus=true) run on Sunday:
+
+```shell
+  You should not deploy. I see you deployed on Friday
+  npm ERR! code ELIFECYCLE
+  npm ERR! errno 1
+  npm ERR! should-i-deploy-today@1.0.0 start: `npm run shouldIDeploy`
+  npm ERR! Exit status 1
+```
+
+---
+
+- Want it without logging? Try silent mode with **--silent** argument (note this only works alongside CI option):
+
+```bash
+  npm run should-i-deploy-today --ci --silent
+```
+
+> Output example with --silent option (only throws without logging the message):
+
+```shell
+  npm ERR! code ELIFECYCLE
+  npm ERR! errno 1
+  npm ERR! should-i-deploy-today@1.0.0 start: `npm run shouldIDeploy`
+  npm ERR! Exit status 1
+```
+
+---
+
+## License
+
+should-i-deploy-today is [MIT licensed](./LICENSE).

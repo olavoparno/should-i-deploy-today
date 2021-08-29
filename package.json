@@ -1,0 +1,69 @@
+{
+  "name": "should-i-deploy-today",
+  "version": "0.0.1",
+  "description": "Should I deploy today? Use it in your CI/CD environment or simply for fun.",
+  "scripts": {
+    "test": "jest",
+    "cover": "npm run test -- --coverage",
+    "test:ci": "CI=TRUE npm run test",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "build": "rm -rf lib/ && tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "start": "npm run build && node lib/index.js",
+    "start:dev": "nodemon",
+    "release": "standard-version",
+    "make-badges": "istanbul-badges-readme",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "lib/index.js",
+  "bin": {
+    "should-i-deploy-today": "lib/index.js"
+  },
+  "author": "Olavo Parno",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:olavoparno/should-i-deploy-today.git"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "lcov"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "modulePathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.0.2",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0",
+    "standard-version": "^9.3.0",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}

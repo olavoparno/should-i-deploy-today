@@ -83,7 +83,7 @@
 ```shell
   npm ERR! code ELIFECYCLE
   npm ERR! errno 1
-  npm ERR! should-i-deploy-today@0.0.4 start: `npm run shouldIDeploy`
+  npm ERR! should-i-deploy-today@1.0.0 start: `npm run shouldIDeploy`
   npm ERR! Exit status 1
 ```
 

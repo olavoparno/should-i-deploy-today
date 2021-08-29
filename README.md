@@ -20,9 +20,9 @@
 - [Contributors](#contributors)
 - [License](#license)
 
-## Running example
+## Practical example
 
-**TODO**
+![Example](./assets/practical-example.png)
 
 ---
 
@@ -54,16 +54,37 @@
   npm run should-i-deploy-today --ci
 ```
 
-- Want it without logging? Try silent mode with **--silent** argument:
+- You may also use **CI=true** instead:
 
 ```bash
-  npm run should-i-deploy-today --silent
+  CI=true npm run should-i-deploy-today --ci
 ```
 
-- You may also only throw on a pipeline without loggin anything by combining both arguments:
+> Output example from a [pipeline](https://github.com/olavoparno/should-i-deploy-today/runs/3455432573?check_suite_focus=true) run on Sunday:
+
+```shell
+  You should not deploy. I see you deployed on Friday
+  npm ERR! code ELIFECYCLE
+  npm ERR! errno 1
+  npm ERR! should-i-deploy-today@1.0.0 start: `npm run shouldIDeploy`
+  npm ERR! Exit status 1
+```
+
+---
+
+- Want it without logging? Try silent mode with **--silent** argument (note this only works alongside CI option):
 
 ```bash
-  npm run should-i-deploy-today --silent --ci
+  npm run should-i-deploy-today --ci --silent
+```
+
+> Output example with --silent option (only throws without logging the message):
+
+```shell
+  npm ERR! code ELIFECYCLE
+  npm ERR! errno 1
+  npm ERR! should-i-deploy-today@0.0.4 start: `npm run shouldIDeploy`
+  npm ERR! Exit status 1
 ```
 
 ---

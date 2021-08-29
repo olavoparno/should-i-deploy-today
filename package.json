@@ -14,7 +14,7 @@
     "release": "standard-version",
     "make-badges": "istanbul-badges-readme",
     "prepublishOnly": "npm run build",
-    "shouldIDeploy": "node lib/index.js -- --ci"
+    "shouldIDeploy": "CI=TRUE node lib/index.js"
   },
   "main": "lib/index.js",
   "bin": {

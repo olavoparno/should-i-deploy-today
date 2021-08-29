@@ -1,4 +1,4 @@
-export const getArgumentValue = (argName: string): string | false => {
+export const getArgumentValue = (argName: string): boolean => {
   const args = process.argv
     .filter((item) => {
       if (item.indexOf(argName) >= 0) {
@@ -9,5 +9,7 @@ export const getArgumentValue = (argName: string): string | false => {
     })
     .toString();
 
-  return args ? args.replace(`--${argName}=`, '') : false;
+  const envs = process.env[argName.toUpperCase()] || process.env[argName.toLowerCase()];
+
+  return !!args || !!envs;
 };

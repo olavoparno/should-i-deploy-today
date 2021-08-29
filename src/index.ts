@@ -5,12 +5,16 @@ import { shouldIDeployFactory } from './factory';
 import { logger } from './logger';
 import { time } from './time';
 
-const shouldIDeploy = shouldIDeployFactory({
+export const shouldIDeploy = shouldIDeployFactory({
   logger,
   getRandom,
   dayHelper,
   time,
   returnFalseOrExit1,
+});
+
+process.on('uncaughtException', () => {
+  process.exit(1);
 });
 
 shouldIDeploy();

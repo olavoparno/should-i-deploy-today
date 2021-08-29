@@ -1,6 +1,6 @@
 {
   "name": "should-i-deploy-today",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Should I deploy today? Use it in your CI/CD environment or simply for fun.",
   "scripts": {
     "test": "jest",

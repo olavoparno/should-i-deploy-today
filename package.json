@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "cover": "npm run test -- --coverage",
-    "test:ci": "CI=TRUE npm run test",
+    "test:ci": "npm run shouldIDeploy && CI=TRUE npm run test",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "build": "rm -rf lib/ && tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
@@ -13,7 +13,8 @@
     "start:dev": "nodemon",
     "release": "standard-version",
     "make-badges": "istanbul-badges-readme",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "shouldIDeploy": "node lib/index.js -- --ci"
   },
   "main": "lib/index.js",
   "bin": {

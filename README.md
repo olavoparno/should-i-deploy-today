@@ -4,20 +4,18 @@
 
 > Should I deploy today? Use it in your CI/CD environment or simply for fun.
 
-| Statements                                                                    | Branches                                                                                       | Functions                                                                          | Lines                                                               |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Branches%20are%20troublesome!-100%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/Mis%20funciones!-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg) |
+| Statements                                                                    | Branches                                                                  | Functions                                                                   | Lines                                                               |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg) |
 
 ---
 
 ## Table of Contents
 
-- [Running example](#running-example)
-- [Requirements](#requirements)
+- [Practical example](#practical-example)
 - [Installation](#installation)
 - [Simple Usage](#simple-usage)
 - [Advanced Usage](#advanced-usage)
-- [Contributors](#contributors)
 - [License](#license)
 
 ## Practical example
